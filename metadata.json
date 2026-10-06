@@ -1,0 +1,6 @@
+{
+  "name": "CYBERNEXUS SOC",
+  "description": "Production-quality, mobile-first AI-assisted Security Operations Centre platform. Detect. Investigate. Explain. Respond.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

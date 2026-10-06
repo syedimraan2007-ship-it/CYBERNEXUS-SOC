@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  soc-platform:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cybernexus-soc
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - AI_PROVIDER=gemini
+      - GEMINI_MODEL=gemini-3.8-flash
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
